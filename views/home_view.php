@@ -29,11 +29,14 @@
 <h1>Tabla de contenidos</h1>
 <br><br>
 <ul>
+	<li><?php echo anchor('categoria/hoy', 'Hoy!');?></li>
 
 <li><?php echo anchor('/categoria/musica', 'Música');?>
 <li><?php echo anchor('/categoria/arte', 'Arte');?>
 <li><?php echo anchor('/categoria/academico', 'Académico');?>
+
 </ul>
+<p><?php echo anchor('/contactos/form/', 'Sugierenos un evento');?> </p>
 </div>
 </td>
 <?php if ($query->num_rows() > 0):

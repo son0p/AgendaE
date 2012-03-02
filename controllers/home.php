@@ -42,7 +42,7 @@ class Home extends CI_Controller {
     	$this->db->where('date <=', $fecha_semana);//range max (7 next days)
     	$data['query'] = $this->db->get('events');
 	
-	$this->db->where('id', 4);
+	$this->db->where('visible', '1');
 	$data['editorial'] = $this->db->get('editoriales');
 	
    	$this->load->view('home_view', $data);
