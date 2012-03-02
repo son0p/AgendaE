@@ -38,8 +38,7 @@
 				
 			<div id="menu">
 		<ul id="main">
-			<li><?php echo anchor('categoria/hoy', 'hoy');?></li>
-				<!--	<li><?php //echo form_open('/home/pre_search');?>
+						<!--	<li><?php //echo form_open('/home/pre_search');?>
 				<input type="text" name="keyword" /> 
 				<input type="submit" id="mysubmit" value="Buscar" />
 				 </form></li> -->
@@ -47,8 +46,8 @@
 				
 	<?php if ($this->ion_auth->logged_in()) { ?>	
 	<li><?php echo anchor('/backend', 'administrar');?></li>
+	<li><?php echo anchor('/editoriales', 'Editoriales'); ?></li>
 	<li><?php echo anchor('auth/logout', 'logout'); ?></li>
-
 
 	<?php }
 	else

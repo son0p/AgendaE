@@ -29,7 +29,7 @@
 					'1' => 'Si',
 					'2' => 'No',
 					);
-					echo form_dropdown('visible', $options, '1');    				
+					echo form_dropdown('visible', $options, '0');    				
     			?>  				
     		</td>
     	</tr>          

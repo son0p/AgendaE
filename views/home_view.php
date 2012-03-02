@@ -36,7 +36,7 @@
 <li><?php echo anchor('/categoria/academico', 'Académico');?>
 
 </ul>
-<p><?php echo anchor('/contactos/form/', 'Sugierenos un evento');?> </p>
+<div id="sugiere"><?php echo anchor('/contactos/form/', 'Sugiere un evento');?></a> 
 </div>
 </td>
 <?php if ($query->num_rows() > 0):
