@@ -1,0 +1,17 @@
+<?php 
+
+class Agendamodel extends CI_Model{
+	function __construct()
+	{
+		parent::__construct();
+	}
+	
+	function get_last_ten_entries()
+	{
+		$query = $this->db->get('proj_revisiones', 10);
+		return $query->result();
+	}
+}
+
+/* End of file agenda_model.php */
+ 
