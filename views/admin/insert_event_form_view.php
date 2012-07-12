@@ -9,8 +9,8 @@
       	<?php
       			 $options= array (
 					'1' => 'Música',
-					'2' => 'Arte',
-					'3' => 'Bar/Café',
+					'3' => 'Arte',
+					'2' => 'Bar/Café',
 					'4' => 'Académico',
 					);
 					echo form_dropdown('category', $options, '1' );    

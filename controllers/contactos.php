@@ -20,7 +20,7 @@
    public function form()
    {
 		
-   		$this->load->view('contacto_event_form_view', $data);
+   		$this->load->view('contacto_event_form_view');
    }
    
    public function insert()
@@ -35,6 +35,9 @@
  
   
    
+public function gracias(){
+	$this->load->view('contacto_gracias_view');
+}
 public function delete()
 	{
 		$this->db->where ('id', $this->uri->segment(3));

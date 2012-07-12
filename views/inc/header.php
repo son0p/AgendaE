@@ -25,11 +25,9 @@
 
 
 <title>Agenda Emergente</title>
-<style type='text/css' media='all'>@import url('<?php echo base_url()."css/smallwindow/default.css"; ?>');</style>
-
-<div id="header" >
-		<div id="logo">
-	<h1><a href="<?php echo base_url(); ?>">Agenda Emergente  </a></h1>
+<style type='text/css' media='all'>@import url('<?php echo base_url()."css/style.css"; ?>');</style><div id="header" >
+	<div id="logo">
+	<h1><a href="<?php echo base_url(); ?>"><img src="<?php echo base_url();?>./images/logo_ae.jpg" height="15" width="300"></a></h1>
 	
 	
 </div>

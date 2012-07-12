@@ -1,29 +1,25 @@
 <?php $this->load->view("inc/header")?>
-		
-
-
-
-
-
-
 
 <div id="wrapper">
 	
 <table>
 <tr>
-<td> <div id="cover"><!--  --></div>	</td>
+<td><span title="Foto Juno"> <div id="cover"> <!-- --></div></span>	</td>
 <td>
 <div id="editorial"> 
 	<div id="editorial_text"> 
 	<h1>Editorial</h1>
 	<?php $row = $editorial->row(); ?>
-	<img src="<?php echo $row->img ?>" width="150" height="200" />
+	<img src="<?php echo $row->img ?>" width="230" height="230" alt=".." title="..." ><div id="editorial_image_credit"><?php echo $row->image_credit ?></div>
 	<h2><?php echo $row->title; ?></h2><br />
 	 <br />
-	<?php echo $row->post; ?>
+         <p><?php echo $row->post; ?></p>
+       
 	</div>
+	
 </div>
 </td>
+
 <td>
 <div class="content">
 <h1>Tabla de contenidos</h1>
@@ -34,10 +30,13 @@
 <li><?php echo anchor('/categoria/musica', 'Música');?>
 <li><?php echo anchor('/categoria/arte', 'Arte');?>
 <li><?php echo anchor('/categoria/academico', 'Académico');?>
-
+<li><?php echo anchor('/categoria/barcafe', 'Bar/Café');?>
 </ul>
 <div id="sugiere"><?php echo anchor('/contactos/form/', 'Sugiere un evento');?></a> 
-</div>
+</div><div id="facebook">
+ <iframe src="http://www.facebook.com/plugins/like.php?href=www.agendaemergente.com"
+        scrolling="no" frameborder="0"
+        style="border:none; width:200px; height:80px"></iframe></div>
 </td>
 <?php if ($query->num_rows() > 0):
 	foreach ($query->result() as $row):?>
@@ -72,18 +71,25 @@
 	?>
 	<div class="event_time"><img src="<?php echo base_url()?>./images/icons/clocks.gif" height="30" width="30" /> <?php echo $row->time; ?><br />
 	<strong> <img src="<?php echo base_url()?>./images/icons/dollar.png" height="25" width="25" /> <?php echo $row->price; ?><br /></strong>	</div>
-	<div class="event_link"><?php echo anchor($row->link, '[Enlace]');?></div>
+	
+	<div class="event_link"><?php
+	  $link = ' <img src="'.base_url().'/images/icons/hyperlink.gif" height="35" width="35" />';
+	  echo anchor($row->link, $link);?></div>
 	<div class="event_footer"><!-- --></div>
 	 </td>
 	</div>
   	<?php endforeach;
 	endif;?>
+<td>
+<div class="ultimo">
+<!-- -->
+</div>
+</td>	      
 	      
 	      
 	      
 	      
-	      
-	           </tr>
+	   </tr>
 </table>
 		
 			

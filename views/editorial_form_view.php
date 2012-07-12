@@ -27,8 +27,10 @@
       </tr>       
 	   
       <tr>
-      	<td>foto:<?php echo  form_input('img') ?> Si tienes que sibir una foto desde tu computadora puedes subirla a <a href="http://inky.ws/" />http://inky.ws/ </a> 
+      	<td>foto:<?php echo  form_input('img') ?><br> Si tienes que subir una foto desde tu computadora puedes subirla a <a href="http://agendaemergente.com/upload" />
+http://agendaemergente.com/upload </a>, luego de subirla puedes pegar aquí el hotlink<br><br>
       </tr> 
+<td>Crédito imagen:<?php echo form_input('image_credit')?> </td>
      	<tr>
      	       	<td><p><input type="submit" value="enviar" /></p>
        </tr>     

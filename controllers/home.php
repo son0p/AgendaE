@@ -44,7 +44,8 @@ class Home extends CI_Controller {
 	
 	$this->db->where('visible', '1');
 	$data['editorial'] = $this->db->get('editoriales');
-	
+	$this->db->where('visible', '1');
+	$data['ads']=$this->db->get('ads');
    	$this->load->view('home_view', $data);
       
       

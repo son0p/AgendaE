@@ -53,7 +53,7 @@ class Categoria extends CI_Controller {
 	$data['fecha'] = $fecha; 
 	$this->db->order_by("date") ;
 	
-	$this->db->where('category', '2');  
+	$this->db->where('category', '3');  
     	$this->db->where('visible','1');
     	$this->db->where('date >=', $fecha);	//range today
    	$this->db->where('date <=', $fecha_semana);//range max (7 next days)
@@ -90,6 +90,31 @@ class Categoria extends CI_Controller {
       
       
 	}
+
+	public function barcafe ()
+	{
+		      
+     	$fecha = date('Y-m-d');
+	$fecha_semana = date('Y-m-d', strtotime('+7 days')); //sum 7 days 
+	$data['dia']= substr($fecha, -2, 2);
+	$data['fecha'] = $fecha; 
+	$this->db->order_by("date") ;
+	
+	$this->db->where('category', '2');  
+    	$this->db->where('visible','1');
+    	$this->db->where('date >=', $fecha);	//range today
+   	$this->db->where('date <=', $fecha_semana);//range max (7 next days)
+    	$data['query'] = $this->db->get('events');
+	
+	$this->db->where('id', 1);
+	$data['editorial'] = $this->db->get('editoriales');
+	
+   	$this->load->view('result_view', $data);
+      
+      
+	}
+
+
 	public function hoy()
 
 	{
@@ -104,15 +129,6 @@ class Categoria extends CI_Controller {
 	$this->db->where('date',$fecha);
 	$this->load->view('result_view', $data);
 	}
-	public function mapa()
-
-	{
-		// create a today value
-	$this->db->where('id',$this->uri->segment(3));
-	$this->db->get('ae_sitios');
-	$this->load->view('sitio_view', $data);
-	}
-
 
 	
 }
