@@ -6,7 +6,10 @@
 	 if ($this->ion_auth->logged_in())
 	  { 	     
      $this->load->model('agendamodel');
-     $this->db->order_by("date",'DESC') ;
+     $this->db->order_by("date",'DESC');
+     $today = date ("Y-m-d"); 
+     $delete_date =  date('Y-m-d', strtotime('-7 days')); //offset  (- 7 days)      
+     $this->db->where('date >= ', $delete_date); //show only 7 days past, all future.
      $data['query'] = $this->db->get('events');
      $this->load->view('admin/backend_view',$data);
      }

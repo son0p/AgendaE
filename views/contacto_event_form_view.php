@@ -34,52 +34,39 @@
 					'4' => 'Académico',
 					);
 					echo form_dropdown('category', $options, '1' );    
-								
-    			?>  				
+	?>  				
 		</tr>     
       <tr>
 	
-
-      	<td><div id="descriptionTextBoxForm"><b>Resumen del evento:</b></div><div id="textBoxForm"><?php
-
-	$data = array(
-		      'name'        => 'abstract',
-		      'id'          => 'abstract',
-		      'value'       => '',
-		      'rows'   => '10',
-		      'cols'        => '30',
-		      'style'       => 'width:50%',
+      	<td><div id="descriptionTextBoxForm"><b>Resumen del evento:</b></div><div id="textBoxForm">
+<?php
+		  $data = array(
+		 'name'        => 'abstract',
+		 'id'          => 'abstract',
+		 'value'       => '',
+		 'rows'   => '10',
+		 'cols'        => '30',
+		 'style'       => 'width:50%',
 		    );
 
 echo form_textarea($data);
-
-
-
- ?></div>
+ ?>
+</div>
 <tr>
-<td><div id="descriptionTextBoxForm"><b>Contexto</b>(links adicionales, información simpática del evento, daticos, razones por las que es importante ir, comentarios, saludos, insultos,  etc):</div><div id="textBoxForm"><?php
-
-	$data = array(
-		      'name'        => 'context',
-		      'id'          => 'context',
-		      'value'       => '',
-		      'rows'   => '5',
-		      'cols'        => '40',
-		      'style'       => 'width:50%',
-		    );
-
+<td><div id="descriptionTextBoxForm"><b>Contexto</b>(links adicionales, información simpática del evento, daticos, razones por las que es importante ir, comentarios, saludos, insultos,  etc):</div><div id="textBoxForm">
+<?php
+  $data = array(
+		'name'        => 'context',
+		'id'          => 'context',
+		'value'       => '',
+		'rows'   => '5',
+		'cols'        => '40',
+		'style'       => 'width:50%',
+		);
 echo form_textarea($data);
-
-
-
- ?></div>
-
-      	 
-      	
-      	
-      </tr>       
-								
-    	            
+ ?>
+</div>
+     </tr>       
       <tr>
       	<td><b> Link de la imagen del evento:</b><?php echo  form_input('img') ?> Si tienes que subir una foto desde tu computadora puedes subirla a <a href="http://agendaemergente.com/upload" />
 http://agendaemergente.com/upload </a>, luego de subirla puedes pegar aquí el hotlink (la foto se verà de 150px de ancho por 200px de alto)
@@ -95,9 +82,13 @@ http://agendaemergente.com/upload </a>, luego de subirla puedes pegar aquí el h
  			</td>
  		</tr>
 		<tr>
-		<tr>
- 			<td><b> Lugar del evento:</b>
+			<tr>
+			<td><b> Lugar del evento:</b>
  			 <?php echo  form_input('place') ?> <img src="<?php echo base_url()?>./images/icons/place.png" height="30" width="30" />
+ 			</td>
+
+			<td><b> Geodatos(mapa):</b>
+ 			 <?php echo  form_input('geodata') ?> 
  			</td>
  		</tr>
 		<tr>

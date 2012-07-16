@@ -110,6 +110,10 @@ echo form_textarea($data);
  			<td><b> Lugar del evento:</b>
  			 <?php echo  form_input('place', $row->place) ?><img src="<?php echo base_url()?>./images/icons/place.png" height="30" width="30" />
  			</td>
+			<td><b> Geodatos (mapa):</b>
+ 			 <?php echo  form_input('geodata', $row->geodata) ?>
+ 			</td>
+
  		</tr>
  		<tr>
  			<td><b> Costo del evento:</b>
