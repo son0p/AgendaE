@@ -81,7 +81,8 @@ echo form_textarea($data);
 								
     	            
       <tr>
-      	<td><b> Link de la imagen del evento:</b><?php echo  form_input('img') ?> Si tienes que subir una foto desde tu computadora puedes subirla a <a href="http://inky.ws/" />http://inky.ws/ </a>, luego de subirla puedes pegar aquí el hotlink (la foto se verà de 150px de ancho por 200px de alto)
+      	<td><b> Link de la imagen del evento:</b><?php echo  form_input('img') ?> Si tienes que subir una foto desde tu computadora puedes subirla a <a href="http://agendaemergente.com/upload" />
+http://agendaemergente.com/upload </a>, luego de subirla puedes pegar aquí el hotlink (la foto se verà de 150px de ancho por 200px de alto)
       </tr> 
      	<tr>
      		<td><b> Fecha en que  inicia :</b><?php echo  form_input('date', date('Y-m-d'));  ?>	

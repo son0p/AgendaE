@@ -25,9 +25,9 @@
    
    public function insert()
    {
-    
-     	$this->db->insert('events', $_POST);
-     	redirect('/contactos/gracias');
+	
+   	$this->db->insert('events', $_POST);
+   	redirect('/contactos/gracias');
       
      }
         

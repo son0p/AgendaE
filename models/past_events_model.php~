@@ -1,0 +1,64 @@
+<?php 
+
+class Past_events_model extends CI_Model {
+	function __construct()
+	{
+		parent::__construct();
+		
+	}
+	
+	function get_past_events()
+	{
+	  $this->load->helper('url');
+	  $today = date ("Y-m-d"); 
+	  $delete_date =  date('Y-m-d', strtotime('-7 days')); //offset to delete images (- 7 days) 
+	  $this->db->where('date <', $delete_date);
+	  ;
+	  $query = $this->db->get('events');
+	  
+	  echo "<H1>Imagenes para borrar</h1>";
+
+	  foreach ($query->result() as $row){
+	    $url = $row->img;
+	    $image_to_del = basename(parse_url($url, PHP_URL_PATH));
+	    echo  $row->img, " ",  basename(parse_url($url, PHP_URL_PATH));
+	    echo "<br />";
+	   
+  //define the root directory of CodeIgniter
+	  $path = "./images/agenda/" .$image_to_del;
+ 
+	  //from here, delete the file off using unlink
+	  // $result = unlink($path);
+	 
+	  /* if($result){ */
+	  /*   $data['status'] = "File has been deleted successfully!"; */
+	  /* }else{ */
+	  /*   $data['status'] = "There is a problem deleting the file!"; */
+	  /* } */
+ 
+	    
+	  }
+// $query->result();
+	}
+	
+	function tag()
+	{
+		$this->db->where('tag_id', $this->uri->segment(3));
+		$query = $this->db->get('proj_tags');
+		return $query->result();
+		
+	}
+
+	function name_day()
+	{
+	$dias = array ("Domingo","Lunes", "Martes", "Miercoles","Jueves", "Viernes", "Sabado" ); 
+	$meses = array('','Enero','Febrero','Marzo','Abril','Mayo','Junio','Julio','Agosto','Septiembre','Octubre','Noviembre','Diciembre');	
+
+	}
+
+
+
+}
+
+/* End of file agenda_model.php */
+ 
